@@ -1,5 +1,6 @@
 const express = require('express');
 const expressConfig = require('./config/express');
+const routeConfig = require('./routes');
 
 // Setup Server
 const app = express();
@@ -8,7 +9,8 @@ const app = express();
 app.set('port', process.env.PORT || 3000);
 
 // Express Config
-expressConfig(app)
+expressConfig(app);
+routeConfig(app);
 
 // Start server
 const startServer = async () => {
